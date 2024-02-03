@@ -7,13 +7,16 @@ import java.awt.event.ActionListener;
 
 public class Keyboard extends JPanel  {
 
-    private static final int NUMBER_ROWS_LAYOUT = 5;
-    private static final int NUMBER_COLUMNS_LAYOUT = 4;
+    private static final int RED_COLOR_PARAMETER = 46;
+    private static final int GREEN_COLOR_PARAMETER = 49;
+    private static final int BLUE_COLOR_PARAMETER = 50;
+
     private static final Color DARK_GRAY = new Color(68, 68, 68);
     private static final Color LIGHT_GRAY = new Color(99, 99, 99);
     private static final Color ORANGE = new Color(242, 163, 60);
 
     public Keyboard() {
+        setBackground(new Color(RED_COLOR_PARAMETER, GREEN_COLOR_PARAMETER, BLUE_COLOR_PARAMETER));
         GridBagLayout layout = new GridBagLayout();
         GridBagConstraints constraints = new GridBagConstraints();
         setLayout(layout);
