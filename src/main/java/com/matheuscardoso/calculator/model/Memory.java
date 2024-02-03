@@ -4,6 +4,7 @@ import com.matheuscardoso.calculator.enumerators.CommandType;
 import com.matheuscardoso.calculator.observers.MemoryObserver;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,7 @@ public class Memory {
     private final List<MemoryObserver> observers = new ArrayList<>();
     private CommandType lastOperation = null;
     private boolean replace = false;
+    @Setter
     private String actualText = "";
     private String bufferText = "";
 
@@ -112,6 +114,8 @@ public class Memory {
             } else if("=".equals(text)) {
                 return CommandType.EQUALS;
             } else if("±".equals(text)) {
+                return CommandType.SIGNAL;
+            } else if("+/-".equals(text)) {
                 return CommandType.SIGNAL;
             } else if(",".equals(text) && !actualText.contains(",")) {
                 return CommandType.COMMA;
