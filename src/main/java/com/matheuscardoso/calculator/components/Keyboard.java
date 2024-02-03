@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Keyboard extends JPanel  {
+public class Keyboard extends JPanel implements ActionListener {
 
     private static final int RED_COLOR_PARAMETER = 46;
     private static final int GREEN_COLOR_PARAMETER = 49;
@@ -57,6 +57,19 @@ public class Keyboard extends JPanel  {
         constraints.gridx = x;
         constraints.gridy = y;
         Button button = new Button(text, color);
+        button.addActionListener(this);
         add(button, constraints);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent event) {
+        if (isInstanceOfJButton(event)) {
+            JButton button = (JButton) event.getSource();
+            System.out.println(button.getText());
+        }
+    }
+
+    private boolean isInstanceOfJButton(ActionEvent event) {
+        return event.getSource() instanceof JButton;
     }
 }
