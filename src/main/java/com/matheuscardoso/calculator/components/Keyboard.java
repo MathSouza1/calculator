@@ -1,5 +1,7 @@
 package com.matheuscardoso.calculator.components;
 
+import com.matheuscardoso.calculator.model.Memory;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -65,7 +67,7 @@ public class Keyboard extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent event) {
         if (isInstanceOfJButton(event)) {
             JButton button = (JButton) event.getSource();
-            System.out.println(button.getText());
+            Memory.getInstance().processCommand(button.getText());
         }
     }
 
