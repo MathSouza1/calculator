@@ -9,7 +9,7 @@ public class Button extends JButton {
 
     public Button(String text, Color color) {
         setText(text);
-        setFont(new Font("courier", Font.PLAIN, FONT_SIZE));
+        setFont(new Font("Courier", Font.PLAIN, FONT_SIZE));
         setOpaque(true);
         setBackground(color);
         setForeground(Color.WHITE);
