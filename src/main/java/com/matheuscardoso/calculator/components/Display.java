@@ -17,6 +17,7 @@ public class Display extends JPanel implements MemoryObserver {
     private final JLabel jLabel;
 
     public Display() {
+        Memory.getInstance().addObserver(this);
         setBackground(new Color(RED_COLOR_PARAMETER, GREEN_COLOR_PARAMETER, BLUE_COLOR_PARAMETER));
         jLabel = new JLabel(Memory.getInstance().getActualText());
         jLabel.setForeground(Color.WHITE);
